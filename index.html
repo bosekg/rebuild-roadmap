@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rebuild 4-Week Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#09090b; --card:#141418; --line:#25252c; --text:#f3f3f5;
+  --soft:#c9c9d2; --muted:#9a9aa6; --accent:#a48be0; --accent-bg:rgba(164,139,224,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+em{font-style:italic;font-weight:500;color:var(--accent)}
+header.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:28px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+header.top .logo{font-size:26px;font-style:italic;font-weight:500;color:var(--text)}
+.eyebrow{margin:0 0 20px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{margin:0;font-weight:600;font-size:clamp(46px,8.5vw,108px);line-height:1;letter-spacing:-.03em}
+h2{margin:0 0 12px;font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.025em}
+h3{margin:0 0 10px;font-weight:600;font-size:24px;letter-spacing:-.02em}
+p{margin:0}
+.hero{padding:88px 0 56px}
+.hero .lead{margin-top:32px;max-width:700px;font-size:20px;color:var(--soft)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.stat b{display:block;font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.stat span{display:block;margin-top:6px;font-size:15px;color:var(--muted)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.sub{max-width:700px;color:var(--soft);font-size:18px;margin-bottom:40px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+.card p{color:var(--soft);font-size:16px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);background:var(--accent-bg);border:1px solid rgba(164,139,224,.28);border-radius:999px;padding:3px 10px;margin-bottom:14px}
+/* weeks */
+.week{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line)}
+.week:first-of-type{border-top:0;padding-top:0}
+.week .when .n{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.week .when .d{margin-top:6px;color:var(--muted);font-size:15px}
+.week .when .t{margin-top:10px;font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.items{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.items li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start}
+.items li .pill{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);padding-top:5px}
+.items li b{display:block;font-weight:600;font-size:18px;letter-spacing:-.01em}
+.items li span{display:block;color:var(--soft);font-size:15.5px;margin-top:2px}
+.loop{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:16px;font-weight:500}
+.step i{font-style:normal;color:var(--accent);margin-right:8px;font-weight:600}
+/* pillar blocks */
+ul.dots{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+ul.dots li{position:relative;padding-left:20px;color:var(--soft);font-size:16px}
+ul.dots li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+ul.dots li b{color:var(--text);font-weight:600}
+.flag{margin-top:16px;background:var(--accent-bg);border:1px solid rgba(164,139,224,.35);border-radius:16px;padding:22px 26px}
+.flag b{color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13px;display:block;margin-bottom:6px}
+.flag p{color:var(--text);font-size:17px}
+.levels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.level{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.level small{display:block;color:var(--accent);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+.level p{color:var(--soft);font-size:16px}
+.arrow{display:none}
+.blockhead{margin:56px 0 18px}
+.blockhead:first-of-type{margin-top:0}
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin-top:18px;font-size:20px;font-style:italic;font-weight:500;color:var(--text);max-width:760px}
+footer{padding:40px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:860px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid3,.grid2,.levels{grid-template-columns:1fr}
+  .week{grid-template-columns:1fr;gap:18px}
+  .items li{grid-template-columns:1fr;gap:4px}
+  .hero{padding:56px 0 40px}
+  section{padding:48px 0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <span class="logo">Rebuild</span>
+  <span>4-week roadmap · 26 Oct – 22 Nov 2026 · prepared for William</span>
+</header>
+
+<div class="hero">
+  <p class="eyebrow">The roadmap</p>
+  <h1>Four weeks.<br><em>Setup, launch, consistency.</em></h1>
+  <p class="lead">One rolling plan across three pillars: the Skool community, the content engine and the sales process. Week 1 builds the foundation, week 2 launches, week 3 builds momentum, and from week 4 on it's repeat and consistency. We always plan four weeks ahead.</p>
+  <div class="stats">
+    <div class="stat"><b>3</b><span>pillars: Skool, Content, Sales</span></div>
+    <div class="stat"><b>Week 2</b><span>Skool community launches</span></div>
+    <div class="stat"><b>2 videos</b><span>in the first filming batch</span></div>
+    <div class="stat"><b>4 weeks</b><span>planned ahead, always</span></div>
+  </div>
+</div>
+
+<section id="weeks">
+  <p class="eyebrow">Week by week</p>
+  <h2>What happens <em>when</em></h2>
+  <p class="sub">Every item is tagged with the pillar it belongs to. Details for each pillar are further down the page.</p>
+
+  <div class="week">
+    <div class="when"><div class="n">Week 1</div><div class="d">Starts Mon 26 Oct</div><div class="t">The Setup</div></div>
+    <ul class="items">
+      <li><span class="pill">Content</span><div><b>Social setup</b><span>"My story" video and a "who do I help" carousel. One video needs scripting and filming.</span></div></li>
+      <li><span class="pill">Skool</span><div><b>Complete the community lockout and design</b><span>Full structure, free modules, paid levels, and the SOPs and interactive pieces for new members.</span></div></li>
+      <li><span class="pill">Sales</span><div><b>Lock the full onboard procedure and client convenience procedure</b><span>What happens from the moment someone says yes to the moment they're settled in.</span></div></li>
+      <li><span class="pill">Sales</span><div><b>Referrals reachout</b><span>Spread the word and find people from the ICP to work with 1:1 in person. The live session is for a testimonial and social proof, so Rebuild can monetize properly down the road.</span></div></li>
+      <li><span class="pill">Content</span><div><b>First batch film</b><span>2 YouTube videos, one for each of the upcoming weeks.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="when"><div class="n">Week 2</div><div class="d">Starts Mon 2 Nov</div><div class="t">The Launch</div></div>
+    <ul class="items">
+      <li><span class="pill">Content</span><div><b>First videos delivered and published</b><span>Edited videos land, and the first one goes live on YouTube.</span></div></li>
+      <li><span class="pill">Skool</span><div><b>Skool community launch</b><span>Friends join first to build up the numbers, then the doors open wider.</span></div></li>
+      <li><span class="pill">Content</span><div><b>Skool community marketing starts on socials</b><span>Community messaging begins running alongside the 1:1 messaging.</span></div></li>
+      <li><span class="pill">Sales</span><div><b>Sales call roleplays begin</b><span>Separate practice calls. A 2-3 week procedure to get through every scenario and get comfortable with the script.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="when"><div class="n">Week 3</div><div class="d">Starts Mon 9 Nov</div><div class="t">Momentum</div></div>
+    <ul class="items">
+      <li><span class="pill">Content</span><div><b>Second batch film</b><span>The next 2 videos, so the content pipeline stays two weeks ahead.</span></div></li>
+      <li><span class="pill">Skool</span><div><b>Engagement inside the community</b><span>Show up, welcome new members, keep conversations going.</span></div></li>
+      <li><span class="pill">Sales</span><div><b>Sales skills sharpening</b><span>Roleplay program continues, scripts get tighter.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="when"><div class="n">Week 4 →</div><div class="d">Starts Mon 16 Nov</div><div class="t">Repeat &amp; consistency</div></div>
+    <div>
+      <p style="color:var(--soft);font-size:17px;max-width:680px;margin-bottom:18px">From here the plan is a loop. Nothing new gets invented each week. The work is doing the same cycle well, and extending the roadmap by one week so we always see four ahead.</p>
+      <div class="loop">
+        <span class="step"><i>1</i>Film a batch</span>
+        <span class="step"><i>2</i>Deliver and publish</span>
+        <span class="step"><i>3</i>Engage in Skool</span>
+        <span class="step"><i>4</i>Sharpen sales</span>
+        <span class="step"><i>5</i>Add the next week to the roadmap</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skool">
+  <p class="eyebrow">Pillar 1</p>
+  <h2>Skool <em>community</em></h2>
+  <p class="sub">A community that gives real value from the day someone joins. Free to get in, paid to go deeper.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <span class="tag">Free</span>
+      <h3>The Rebuild Community</h3>
+      <p>Free modules carry the same amount of value as William's YouTube videos, or a bit more. Someone who never pays should still leave with something real.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Paid</span>
+      <h3>The Rebuild Circle</h3>
+      <p>Paid modules are built in levels. Members start with a foundation, then go deeper into William's own story.</p>
+    </div>
+  </div>
+
+  <div class="levels">
+    <div class="level"><small>Level 1</small><h3>Foundation</h3><p>The base everyone goes through first, so every member is working from the same understanding.</p></div>
+    <div class="level"><small>Level 2</small><h3>William's story</h3><p>Once the foundation is in place, William walks them through his own journey and what it taught him.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Classroom structure</h3>
+    <p>Three sections, with the mental and physical tracks kept strictly separate.</p>
+    <ul class="dots">
+      <li><b>Start Here:</b> orientation for everyone entering</li>
+      <li><b>Mental &amp; Mind Improvement:</b> the mental guide</li>
+      <li><b>Physical Elevation:</b> training structure, blueprints, nutrition</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>SOPs and interaction for new members</h3>
+    <p>Whoever enters the community should get real value straight away, not an empty room. We build SOPs for how new members are welcomed and moved through, plus interactive pieces that give them something to do and people to talk to.</p>
+  </div>
+
+  <div class="flag">
+    <b>Flag · launch seeding</b>
+    <p>Before the public launch, share the community with friends so they join first. A community that already has people in it is easier to join than an empty one.</p>
+  </div>
+</section>
+
+<section id="content">
+  <p class="eyebrow">Pillar 2</p>
+  <h2>Content <em>engine</em></h2>
+  <p class="sub">YouTube long-form is the pillar. Short-form is extracted from it. Both offers get marketed, each with its own angle.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <span class="tag">Long-form</span>
+      <h3>YouTube</h3>
+      <p>About 10 minute A-to-B value videos, each attacking one ICP pain point. Filmed in batches, so there is always a buffer of finished videos.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Short-form</span>
+      <h3>Extracted from the videos</h3>
+      <p>The strongest moments of each long-form video become standalone shorts. One shoot feeds both formats.</p>
+    </div>
+  </div>
+
+  <div class="blockhead"><h3>Two offers, two different pain points</h3></div>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag">Community</span>
+      <h3>"Be around people like you"</h3>
+      <p>Start by establishing that the environment and the people around you matter. That attacks the pain point of being surrounded by the wrong environment. Then the offer: if you want to be among like-minded people just like yourself, join the Rebuild community.</p>
+    </div>
+    <div class="card">
+      <span class="tag">1:1 mentorship</span>
+      <h3>Personal guidance</h3>
+      <p>Built on the ICP pain points that need someone in your corner, such as inconsistency, knowing what to do but not doing it, and feeling stuck. These point to the DM keyword and the sales process.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Everyday engagement</h3>
+    <p>Normal daily engagement on the socials, kept inside the frame of William's brand: how he talks, what he stands for, and who he's talking to.</p>
+  </div>
+</section>
+
+<section id="sales">
+  <p class="eyebrow">Pillar 3</p>
+  <h2>Sales <em>process</em></h2>
+  <p class="sub">The goal is a William who is good at sales calls, and a funnel that keeps getting tighter.</p>
+
+  <div class="grid3">
+    <div class="card">
+      <span class="tag">Practice</span>
+      <h3>Roleplays</h3>
+      <p>Separate practice calls over 2-3 weeks to get through every scenario and become familiar with the script. Then constant improvement.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Optimize</span>
+      <h3>Funnel tweaks</h3>
+      <p>As real conversations come in, the funnel gets adjusted wherever it leaks.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Future</span>
+      <h3>App setter &amp; closer</h3>
+      <p>The long-term plan is to delegate this part to a setter and a closer. William has to learn the process himself first.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Rebuild · internal roadmap</span>
+  <span>Not for distribution</span>
+</footer>
+
+</div>
+</body>
+</html>
